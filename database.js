@@ -1,11 +1,8 @@
-const knex = require('knex')({
-    client: 'pg',
-    connection: {
-      host : '127.0.0.1',
-      port : 5432,
-      user : 'postgres',
-      password : 'password',
-      database : 'revou'
-    }
-  });
-  module.exports = knex
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize('revou', 'postgres', 'password', {
+  host: 'localhost',
+  dialect: 'postgres'
+});
+
+module.exports = sequelize

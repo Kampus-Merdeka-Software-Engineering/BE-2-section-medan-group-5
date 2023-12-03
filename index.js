@@ -1,36 +1,24 @@
-const express = require('express')
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const routers = require("./routes");
 
-const db = require('./database')
-const comment = require('./comment')
+const PORT = 3001;
+const app = express();
 
-const app = express()
+app.use(express.json());
+app.use(
+	cors({
+		origin: "*",
+	})
+);
+app.use(morgan("dev"));
+app.use("/api/v1", routers);
 
-app.post('/comment', async function(req, res){
-    try {
-        await comment.create({
-            id: 1,
-            name: req.body.name,
-            email: req.body.email,
-            propic: '',
-            create_at:  new Date(),
-            description: req.body.description
-        })
-        res.send({
-            message: 'Data berhasil ditambahkan'
-        })
-    } catch (error) {
-        return res.status(500).send({
-            message: 'Data gagal ditambahkan'
-        })
-    }
-    
-})
-app.listen(3000, async()=> {
-    console.log('done')
-    try {
-        await db.authenticate();
-        console.log('Connection has been established successfully.');
-      } catch (error) {
-        console.error('Unable to connect to the database:', error);
-      }
-})
+app.get("/", (req, res) => {
+	res.send("Hello World");
+});
+
+app.listen(PORT, () => {
+	console.log(`App Online on http://localhost:${PORT}`);
+});

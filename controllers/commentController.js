@@ -21,11 +21,23 @@ const createComment = async (req, res) => {
 
 const getAllComment = async (req, res) => {
 	try {
-		const comments = await comment.findAll();
+		// const comments = await comment.findAll();
+		const data = [{
+			"content": "ini testing",
+			"name": "indah",
+			"email": "indah@indah.com",
+			"createdAt": "23 Maret 2023 10:30"
+		},
+		{
+			"content": "ini testing",
+			"name": "fikrul",
+			"email": "fikrul@fikrul.com",
+			"createdAt": "21 February 2022 10:30"
+		}]
 
 		res.status(201).json({
 			status: true,
-			results: comments,
+			results: data,
 		});
 	} catch (error) {
 		console.log(error);

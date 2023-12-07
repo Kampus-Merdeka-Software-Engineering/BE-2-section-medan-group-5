@@ -1,11 +1,11 @@
 {
 	"development": {
 		"username": "root",
-		"password": "password",
+		"password": "53Cc5eEBcccf523Ech1-4HaeD3ee31Gc",
 		"database": "railway",
-		"host": "mysql.railway.internal",
+		"host": "monorail.proxy.rlwy.net",
 		"dialect": "mysql",
-		"port" : 3306
+		"port" : 25361
 	},
 	"test": {
 		"username": "root",

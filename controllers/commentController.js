@@ -30,8 +30,8 @@ const getAllComment = async (req, res) => {
 		},
 		{
 			"content": "ini testing",
-			"name": "fikrul",
-			"email": "fikrul@fikrul.com",
+			"name": "fik",
+			"email": "fik@fik.com",
 			"createdAt": "21 February 2022 10:30"
 		}]
 

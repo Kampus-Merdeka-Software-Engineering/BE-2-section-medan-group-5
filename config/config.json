@@ -1,11 +1,11 @@
 {
 	"development": {
 		"username": "root",
-		"password": null,
-		"database": "traveland",
-		"host": "127.0.0.1",
+		"password": "password",
+		"database": "railway",
+		"host": "monorail.proxy.rlwy.net",
 		"dialect": "mysql",
-		"port" : 3307
+		"port" : 25361
 	},
 	"test": {
 		"username": "root",

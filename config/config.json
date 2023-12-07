@@ -3,7 +3,7 @@
 		"username": "root",
 		"password": "password",
 		"database": "railway",
-		"host": "monorail.proxy.rlwy.net",
+		"host": "mysql.railway.internal",
 		"dialect": "mysql",
 		"port" : 3306
 	},

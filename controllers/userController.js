@@ -28,20 +28,20 @@ const login = async (req, res) => {
 		const user = await User.findOne({ where: { email } });
 
 		if (!user) {
-			return res.status(404).json({ message: "User not found" });
+			return res.status(404).json({ status: 404, message: "User not found" });
 		}
 
 		const validPassword = await bcrypt.compare(password, user.password);
 
 		if (!validPassword) {
-			return res.status(401).json({ message: "Invalid password" });
+			return res.status(401).json({ status: 401, message: "Invalid password" });
 		}
 
 		const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY);
 
 		res
 			.status(200)
-			.json({ message: "Login successful", token, role: user.role });
+			.json({ status: 200, message: "Login successful", token, role: user.role });
 	} catch (error) {
 		console.error(error);
 		res.status(500).json({ message: "Internal server error" });
